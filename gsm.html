@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0a0a0b">
+<title>Urban GSM Brașov — Service GSM &amp; Reparații telefoane</title>
+<meta name="description" content="Service GSM în Brașov — reparații telefoane cu diagnostic gratuit, piese de calitate și garanție 12 luni. Display, baterie, mufă de încărcare, placă de bază, recuperare date.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--ink:#0a0a0b;--ink-soft:#131316;--paper:#fafaf8;--volt:#ccff00;--volt-deep:#a4cc00;--fd:'Space Grotesk','Inter',ui-sans-serif,sans-serif;--ease:cubic-bezier(.21,.6,.35,1)}
+html{scroll-behavior:smooth;scroll-padding-top:5rem;background:#0a0a0b}
+[id]{scroll-margin-top:5rem}
+body{font-family:'Inter',ui-sans-serif,system-ui,sans-serif;background:var(--ink);color:var(--paper);line-height:1.5;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+button{font:inherit;background:none;border:0;cursor:pointer;color:inherit}
+ul,ol{list-style:none}
+::selection{background:var(--volt);color:var(--ink)}
+:focus-visible{outline:2px solid var(--volt);outline-offset:3px}
+.container-x{margin-inline:auto;width:100%;max-width:80rem;padding-inline:1.25rem}
+@media(min-width:640px){.container-x{padding-inline:1.5rem}}
+@media(min-width:768px){.container-x{padding-inline:2.5rem}}
+.v{color:var(--volt)}
+#prog{position:fixed;top:0;left:0;right:0;height:2px;z-index:60;background:var(--volt);transform-origin:0 50%;transform:scaleX(0)}
+#hdr{position:fixed;inset-inline:0;top:0;z-index:50;border-bottom:1px solid transparent;transition:background .5s,border-color .5s}
+#hdr.sc{background:rgba(10,10,11,.72);border-color:rgba(255,255,255,.1);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+#hdr nav{display:flex;height:4rem;align-items:center;justify-content:space-between;gap:1rem}
+@media(min-width:768px){#hdr nav{height:5rem}}
+#logo{position:relative;z-index:52;font-family:var(--fd);font-weight:700;font-size:1.125rem;letter-spacing:-.02em;color:var(--paper);white-space:nowrap;max-width:62vw;overflow:hidden;text-overflow:ellipsis}
+#nl{display:none;align-items:center;gap:2rem}
+@media(min-width:1024px){#nl{display:flex}}
+#nl a{position:relative;font-size:.875rem;color:rgba(255,255,255,.7);transition:color .3s}
+#nl a:hover,#nl a.act{color:var(--paper)}
+#nl a::after{content:"";position:absolute;left:0;bottom:-4px;height:1px;width:100%;background:var(--volt);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+#nl a:hover::after,#nl a.act::after{transform:scaleX(1)}
+.cta{display:none;background:var(--volt);color:var(--ink);border-radius:9999px;padding:.625rem 1.25rem;font-size:.875rem;font-weight:500;transition:filter .3s,box-shadow .3s}
+@media(min-width:1024px){.cta{display:inline-block}}
+.cta:hover{filter:brightness(1.1);box-shadow:0 0 24px rgba(204,255,0,.35)}
+#brg{position:relative;z-index:52;display:flex;flex-direction:column;gap:5px;align-items:center;justify-content:center;width:2.5rem;height:2.5rem}
+@media(min-width:1024px){#brg{display:none}}
+#brg span{height:1px;width:1.5rem;background:var(--paper);transition:all .3s}
+body.mo #brg span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+body.mo #brg span:nth-child(2){opacity:0;transform:scaleX(0)}
+body.mo #brg span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+#menu{position:fixed;inset:0;z-index:49;display:flex;flex-direction:column;justify-content:center;padding:2rem;background:var(--ink);opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
+body.mo #menu{opacity:1;visibility:visible}
+#menu a.ml{display:block;padding:.5rem 0;font-family:var(--fd);font-size:2.25rem;font-weight:500;letter-spacing:-.02em;color:var(--paper);transition:color .3s}
+#menu a.ml:hover{color:var(--volt)}
+#menu .mft{margin-top:2.5rem;border-top:1px solid rgba(255,255,255,.1);padding-top:1.5rem}
+#menu .mft a{font-size:1.125rem;color:rgba(255,255,255,.7)}
+#menu .mft a:hover{color:var(--volt)}
+#menu .mft p{margin-top:.25rem;font-size:.875rem;color:rgba(255,255,255,.4)}
+.hero{position:relative;display:flex;flex-direction:column;min-height:100svh;overflow:hidden;background:var(--ink);color:var(--paper)}
+.hbg{position:absolute;inset:0}
+.hbg img,.hbg video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hbg video{opacity:0;transition:opacity 1s}
+.hbg video.on{opacity:1}
+.hov{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,11,.85),rgba(10,10,11,.1) 45%,#0a0a0b)}
+.grain{position:absolute;inset:0;pointer-events:none;opacity:.05;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:180px 180px}
+.hc{position:relative;flex:1;display:flex;flex-direction:column;justify-content:flex-start;padding-top:7rem;padding-bottom:6rem}
+@media(min-width:768px){.hc{padding-top:9rem}}
+.badge{display:inline-flex;width:fit-content;align-items:center;gap:.75rem;margin-bottom:2rem;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.05);border-radius:9999px;padding:.5rem 1rem;font-size:.75rem;font-weight:500;text-transform:uppercase;letter-spacing:.2em;color:rgba(255,255,255,.7);backdrop-filter:blur(8px)}
+.dot{position:relative;display:flex;width:.5rem;height:.5rem}
+.dot::before{content:"";position:absolute;inset:0;border-radius:50%;background:var(--volt);opacity:.6;animation:ping 1.4s cubic-bezier(0,0,.2,1) infinite}
+.dot::after{content:"";position:relative;display:block;width:.5rem;height:.5rem;border-radius:50%;background:var(--volt)}
+@keyframes ping{75%,100%{transform:scale(2.4);opacity:0}}
+h1{max-width:56rem;font-family:var(--fd);font-size:clamp(2.5rem,7.5vw,5.5rem);font-weight:500;line-height:1.02;letter-spacing:-.03em}
+h1 .ln{display:block;overflow:hidden;padding-bottom:.25rem}
+h1 .ln>span{display:inline-block;transform:translateY(110%);animation:rise .9s var(--ease) .2s forwards}
+h1 .ln:nth-child(2)>span{animation-delay:.45s}
+@keyframes rise{to{transform:translateY(0)}}
+.hlist{margin-top:1.5rem;display:flex;flex-wrap:wrap;align-items:center;gap:.5rem .75rem;font-size:.875rem;color:rgba(255,255,255,.7)}
+.hlist li{display:flex;align-items:center;gap:.75rem}
+.hlist li+li::before{content:"";width:.25rem;height:.25rem;border-radius:50%;background:var(--volt)}
+.hcta{margin-top:2rem;display:flex;flex-wrap:wrap;gap:1rem;align-items:center}
+.bp{display:inline-flex;align-items:center;gap:.5rem;border-radius:9999px;background:var(--volt);color:var(--ink);padding:1rem 2rem;font-size:.875rem;font-weight:600;transition:filter .3s,box-shadow .3s}
+.bp:hover{filter:brightness(1.1);box-shadow:0 0 36px rgba(204,255,0,.35)}
+.bo{display:inline-flex;align-items:center;gap:.5rem;border-radius:9999px;border:1px solid rgba(255,255,255,.2);padding:1rem 2rem;font-size:.875rem;font-weight:600;color:var(--paper);transition:border-color .3s,color .3s}
+.bo:hover{border-color:rgba(204,255,0,.7);color:var(--volt)}
+.sind{position:absolute;bottom:2rem;right:2.5rem;display:none;flex-direction:column;align-items:center;gap:.75rem;font-size:10px;text-transform:uppercase;letter-spacing:.3em;color:rgba(255,255,255,.5)}
+@media(min-width:768px){.sind{display:flex}}
+.sind .rail{position:relative;height:2.5rem;width:1px;overflow:hidden;background:rgba(255,255,255,.15)}
+.sind .rail::after{content:"";position:absolute;left:0;right:0;top:0;height:1rem;background:var(--volt);animation:drop 1.8s ease-in-out infinite}
+@keyframes drop{from{transform:translateY(-100%)}to{transform:translateY(300%)}}
+.trust{border-top:1px solid rgba(255,255,255,.1);background:var(--ink)}
+.tgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:3rem 1.5rem;padding-block:4rem}
+@media(min-width:1024px){.tgrid{grid-template-columns:repeat(4,1fr);padding-block:5rem}}
+.stat{display:flex;flex-direction:column;gap:.75rem}
+.stat b{font-family:var(--fd);font-weight:500;font-size:3rem;letter-spacing:-.02em;line-height:1}
+@media(min-width:768px){.stat b{font-size:3.75rem}}
+.stat small{font-size:.75rem;text-transform:uppercase;letter-spacing:.2em;color:rgba(255,255,255,.5)}
+.sec{padding-block:6rem}
+@media(min-width:768px){.sec{padding-block:8rem}}
+.light{background:var(--paper);color:var(--ink)}
+.white{background:#fff;color:var(--ink);border-top:1px solid rgba(10,10,11,.05)}
+.dark{background:var(--ink);color:var(--paper)}
+.eb{display:flex;align-items:center;gap:.75rem;font-size:.75rem;font-weight:500;text-transform:uppercase;letter-spacing:.25em;color:rgba(10,10,11,.5)}
+.dark .eb{color:rgba(255,255,255,.5)}
+.eb::before{content:"";width:.375rem;height:.375rem;border-radius:50%;background:var(--volt)}
+.h2{margin-top:1.25rem;max-width:48rem;font-family:var(--fd);font-size:2.25rem;font-weight:500;line-height:1.05;letter-spacing:-.02em}
+@media(min-width:768px){.h2{font-size:3rem}}
+@media(min-width:1024px){.h2{font-size:3.75rem}}
+.intro{margin-top:1.5rem;max-width:48rem;font-size:1rem;line-height:1.6;color:rgba(10,10,11,.6)}
+@media(min-width:768px){.intro{font-size:1.125rem}}
+.dark .intro{color:rgba(255,255,255,.6)}
+.cards4{margin-top:3.5rem;display:grid;gap:1.25rem}
+@media(min-width:640px){.cards4{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.cards4{grid-template-columns:repeat(4,1fr)}}
+.scard{display:flex;height:100%;flex-direction:column;overflow:hidden;border-radius:1.5rem;border:1px solid rgba(10,10,11,.1);background:#fff;transition:transform .5s var(--ease),box-shadow .5s,border-color .5s}
+.scard:hover{transform:translateY(-6px);border-color:rgba(10,10,11,.2);box-shadow:0 24px 48px -16px rgba(10,10,11,.18)}
+.simg{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--ink)}
+.simg img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease-out}
+.scard:hover .simg img{transform:scale(1.05)}
+.sbody{display:flex;flex-direction:column;flex:1;padding:1.5rem}
+.sbody h3{font-family:var(--fd);font-size:1.125rem;font-weight:500;line-height:1.35}
+.sbody p{margin-top:.5rem;flex:1;font-size:.875rem;line-height:1.6;color:rgba(10,10,11,.6)}
+.sfoot{margin-top:1.5rem;display:flex;align-items:center;justify-content:space-between}
+.sfoot b{font-size:.875rem;font-weight:600}
+.sfoot svg{width:1.25rem;height:1.25rem;color:rgba(10,10,11,.3);transition:color .3s,transform .3s}
+.scard:hover .sfoot svg{color:var(--ink);transform:translate(2px,-2px)}
+.steps{margin-top:3.5rem;display:grid;gap:2.5rem}
+@media(min-width:640px){.steps{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.steps{grid-template-columns:repeat(4,1fr)}}
+.step{border-top:1px solid rgba(255,255,255,.1);padding-top:1.5rem}
+.step .idx{font-family:var(--fd);font-size:.75rem;letter-spacing:.2em;color:var(--volt)}
+.ibox{margin-top:1rem;display:flex;width:3rem;height:3rem;align-items:center;justify-content:center;border-radius:.75rem;border:1px solid rgba(204,255,0,.3);background:rgba(204,255,0,.1)}
+.ibox svg{width:1.25rem;height:1.25rem;color:var(--volt)}
+.step h3{margin-top:1.25rem;font-family:var(--fd);font-size:1.25rem;font-weight:500;letter-spacing:-.01em}
+.step p{margin-top:.75rem;font-size:.875rem;line-height:1.6;color:rgba(255,255,255,.6)}
+.tabs{margin-top:3rem;display:inline-flex;flex-wrap:wrap;gap:.25rem;border-radius:9999px;border:1px solid rgba(10,10,11,.1);background:#fff;padding:.375rem}
+.tabs button{border-radius:9999px;padding:.625rem 1.25rem;font-size:.875rem;font-weight:500;color:rgba(10,10,11,.6);transition:all .3s}
+.tabs button:hover{color:var(--ink)}
+.tabs button.on{background:var(--ink);color:var(--paper)}
+.ptw{margin-top:1.5rem;overflow:hidden;border-radius:1.5rem;border:1px solid rgba(10,10,11,.1);background:#fff}
+.ptw .sx{overflow-x:auto}
+.ptw table{width:100%;min-width:560px;border-collapse:collapse;text-align:left}
+.ptw th{font-weight:500}
+.ptw thead tr{border-bottom:1px solid rgba(10,10,11,.1)}
+.ptw thead th{padding:1.25rem 1.5rem;font-size:.75rem;text-transform:uppercase;letter-spacing:.18em;color:rgba(10,10,11,.4)}
+.ptw tbody tr{border-bottom:1px solid rgba(10,10,11,.05);transition:background .2s}
+.ptw tbody tr:last-child{border-bottom:0}
+.ptw tbody tr:hover{background:var(--paper)}
+.ptw tbody th{padding:1rem 1.5rem}
+.ptw td{padding:1rem 1.5rem;color:rgba(10,10,11,.7);font-variant-numeric:tabular-nums}
+.pnote{margin-top:1.5rem;max-width:42rem;font-size:.875rem;line-height:1.6;color:rgba(10,10,11,.5)}
+.pnote a{font-weight:500;color:var(--ink);text-decoration:underline;text-decoration-color:var(--volt);text-decoration-thickness:2px;text-underline-offset:4px}
+.pnote a:hover{color:rgba(10,10,11,.7)}
+.why{margin-top:4rem;display:grid;gap:3rem 2rem}
+@media(min-width:640px){.why{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.why{grid-template-columns:repeat(4,1fr)}}
+.wit{border-top:1px solid rgba(10,10,11,.1);padding-top:1.5rem}
+.wic{display:flex;width:3rem;height:3rem;align-items:center;justify-content:center;border-radius:.75rem;background:var(--volt)}
+.wic svg{width:1.25rem;height:1.25rem;color:var(--ink)}
+.wit h3{margin-top:1.5rem;font-family:var(--fd);font-size:1.25rem;font-weight:500;letter-spacing:-.01em}
+.wit p{margin-top:.75rem;font-size:.875rem;line-height:1.6;color:rgba(10,10,11,.6)}
+.ba{margin-top:3.5rem;display:grid;gap:2.5rem}
+@media(min-width:1024px){.ba{grid-template-columns:repeat(2,1fr)}}
+.cmp{--pos:50%;position:relative;aspect-ratio:4/3;overflow:hidden;border-radius:1.5rem;border:1px solid rgba(10,10,11,.1);background:var(--ink);user-select:none;-webkit-user-select:none}
+.cmp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cmp .top{position:absolute;inset:0;clip-path:inset(0 calc(100% - var(--pos)) 0 0)}
+.cmp .div{position:absolute;top:0;bottom:0;left:var(--pos);pointer-events:none}
+.cmp .div i{position:absolute;top:0;bottom:0;left:-1px;display:block;width:2px;background:var(--volt)}
+.cmp .hnd{position:absolute;left:0;top:50%;transform:translate(-50%,-50%);display:flex;width:2.75rem;height:2.75rem;align-items:center;justify-content:center;border-radius:50%;background:var(--volt);color:var(--ink);box-shadow:0 10px 15px rgba(0,0,0,.3)}
+.cmp .hnd svg{width:1.25rem;height:1.25rem}
+.cmp .lb{position:absolute;top:1rem;z-index:5;border-radius:9999px;padding:.25rem .75rem;font-size:.75rem;font-weight:500}
+.cmp .lb.b{left:1rem;background:rgba(10,10,11,.7);color:var(--paper);backdrop-filter:blur(4px)}
+.cmp .lb.a{right:1rem;background:var(--volt);color:var(--ink);font-weight:600}
+.cmp input{position:absolute;inset:0;z-index:10;width:100%;height:100%;opacity:0;cursor:ew-resize}
+.bacap{margin-top:1.25rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.bacap h3{font-family:var(--fd);font-size:1.25rem;font-weight:500;letter-spacing:-.01em}
+.bacap span{border-radius:9999px;border:1px solid rgba(10,10,11,.1);background:#fff;padding:.375rem 1rem;font-size:.75rem;font-weight:500;color:rgba(10,10,11,.6);white-space:nowrap}
+.rev{overflow:hidden}
+.revhead{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:2rem}
+.rbadge{display:flex;align-items:center;gap:.75rem;border-radius:9999px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.05);padding:.75rem 1.25rem;font-size:.875rem;color:rgba(255,255,255,.7)}
+.rbadge strong{font-family:var(--fd);font-weight:500;color:var(--paper)}
+.stars{display:flex;gap:.25rem}
+.stars svg{width:1rem;height:1rem;fill:var(--volt)}
+.rcard{flex-shrink:0;width:320px;border-radius:1.5rem;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);padding:1.75rem}
+@media(min-width:768px){.rcard{width:400px}}
+.rcard blockquote{margin-top:1rem;font-size:.875rem;line-height:1.65;color:rgba(255,255,255,.8)}
+.rcard figcaption{margin-top:1.5rem;display:flex;align-items:baseline;justify-content:space-between;gap:1rem}
+.rcard figcaption b{font-weight:500;color:var(--paper)}
+.rcard figcaption span{font-size:.75rem;color:rgba(255,255,255,.4)}
+.rmob{margin-top:3rem}
+@media(min-width:768px){.rmob{display:none}}
+.rmob .trk{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 1.25rem .5rem;scrollbar-width:none}
+.rmob .trk::-webkit-scrollbar{display:none}
+.rmob .rcard{width:82vw;max-width:340px;scroll-snap-align:center}
+.rmob .hint{margin-top:1rem;font-size:.75rem;color:rgba(255,255,255,.4)}
+.rdesk{margin-top:4rem;display:none;flex-direction:column;gap:1.25rem;-webkit-mask-image:linear-gradient(to right,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(to right,transparent,#000 6%,#000 94%,transparent)}
+@media(min-width:768px){.rdesk{display:flex}}
+.mq{display:flex;overflow:hidden}
+.mqt{display:flex;width:max-content;flex-shrink:0;gap:1.25rem;padding-right:1.25rem;animation:marquee 55s linear infinite}
+.mq.mqr .mqt{animation-direction:reverse}
+.mq:hover .mqt{animation-play-state:paused}
+.mqt>div{display:flex;flex-shrink:0;gap:1.25rem}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.faqg{display:grid;gap:3.5rem}
+@media(min-width:1024px){.faqg{grid-template-columns:1fr 1.4fr;gap:5rem}}
+@media(min-width:1024px){.faql{position:sticky;top:7rem;align-self:start}}
+.fbtn{margin-top:2rem;display:inline-flex;align-items:center;gap:.5rem;border-radius:9999px;border:1px solid rgba(10,10,11,.15);padding:.875rem 1.5rem;font-size:.875rem;font-weight:600;color:var(--ink);transition:all .3s}
+.fbtn:hover{border-color:var(--ink);background:var(--ink);color:var(--paper)}
+.faq{border-top:1px solid rgba(10,10,11,.1);border-bottom:1px solid rgba(10,10,11,.1)}
+.fit+.fit{border-top:1px solid rgba(10,10,11,.1)}
+.fq{display:flex;width:100%;align-items:center;justify-content:space-between;gap:1.5rem;padding:1.5rem 0;text-align:left}
+.fq .t{font-family:var(--fd);font-size:1.125rem;font-weight:500;letter-spacing:-.01em}
+@media(min-width:768px){.fq .t{font-size:1.25rem}}
+.fq .pl{display:flex;width:2.25rem;height:2.25rem;flex-shrink:0;align-items:center;justify-content:center;border-radius:50%;border:1px solid rgba(10,10,11,.15);color:rgba(10,10,11,.6);transition:all .3s}
+.fq .pl svg{width:1rem;height:1rem}
+.fit.open .pl{transform:rotate(45deg);border-color:var(--volt);background:var(--volt);color:var(--ink)}
+.fa{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.fa p{padding:0 3rem 1.5rem 0;line-height:1.65;color:rgba(10,10,11,.6)}
+.cgrid{margin-top:3.5rem;display:grid;gap:1.5rem}
+@media(min-width:1024px){.cgrid{grid-template-columns:repeat(2,1fr)}}
+.ccard{display:flex;height:100%;flex-direction:column;gap:2.5rem;border-radius:1.5rem;background:var(--ink);color:var(--paper);padding:2rem}
+@media(min-width:768px){.ccard{padding:3rem}}
+.lab{font-size:.75rem;text-transform:uppercase;letter-spacing:.2em;color:rgba(255,255,255,.5)}
+.cphone{margin-top:.75rem;display:inline-block;font-family:var(--fd);font-size:2.25rem;font-weight:500;letter-spacing:-.02em;transition:color .3s}
+@media(min-width:768px){.cphone{font-size:3rem}}
+.cphone:hover{color:var(--volt)}
+.wab{margin-top:1.5rem;display:inline-flex;align-items:center;gap:.5rem;border-radius:9999px;background:var(--volt);color:var(--ink);padding:.875rem 1.5rem;font-size:.875rem;font-weight:600;transition:filter .3s,box-shadow .3s}
+.wab:hover{filter:brightness(1.1);box-shadow:0 0 28px rgba(204,255,0,.3)}
+.wab svg{width:1rem;height:1rem}
+.cad{display:flex;gap:1rem;align-items:flex-start}
+.cad svg{width:1.25rem;height:1.25rem;flex-shrink:0;margin-top:.25rem;color:var(--volt)}
+.cad b{font-weight:500}
+.cad a{display:inline-block;margin-top:.25rem;font-size:.875rem;color:rgba(255,255,255,.6);text-decoration:underline;text-decoration-color:rgba(204,255,0,.6);text-decoration-thickness:2px;text-underline-offset:4px;transition:color .3s}
+.cad a:hover{color:var(--paper)}
+.chrs{margin-top:auto}
+.chrs .lab{display:flex;align-items:center;gap:.5rem}
+.chrs .lab svg{width:1rem;height:1rem}
+.chrs dl{margin-top:1rem;border-top:1px solid rgba(255,255,255,.1)}
+.chrs .row{display:flex;align-items:center;justify-content:space-between;padding:.75rem 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.chrs .row:last-child{border-bottom:0}
+.chrs dt{font-size:.875rem;color:rgba(255,255,255,.7)}
+.chrs dd{font-size:.875rem;font-weight:500}
+.chrs dd.off{color:rgba(255,255,255,.4)}
+.cmap{position:relative;min-height:420px;overflow:hidden;border-radius:1.5rem;border:1px solid rgba(10,10,11,.1);background:#fff}
+.cmap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+footer{background:var(--ink);color:var(--paper);padding:4rem 0 8rem}
+@media(min-width:768px){footer{padding-bottom:2.5rem}}
+.fgrid{display:grid;gap:3rem}
+@media(min-width:768px){.fgrid{grid-template-columns:repeat(3,1fr)}}
+.flogo{font-family:var(--fd);font-size:1.125rem;font-weight:700;letter-spacing:-.02em}
+.fdesc{margin-top:1rem;max-width:20rem;font-size:.875rem;line-height:1.6;color:rgba(255,255,255,.5)}
+.fh{font-size:.75rem;text-transform:uppercase;letter-spacing:.2em;color:rgba(255,255,255,.4)}
+.fcol ul{margin-top:1rem}
+.fcol li{margin-top:.625rem;font-size:.875rem;color:rgba(255,255,255,.6)}
+.fcol a{transition:color .3s}
+.fcol a:hover{color:var(--volt)}
+.fbot{margin-top:3.5rem;border-top:1px solid rgba(255,255,255,.1);padding-top:1.5rem;font-size:.75rem;color:rgba(255,255,255,.4)}
+#fcb{position:fixed;left:.75rem;right:.75rem;bottom:.75rem;z-index:40;transform:translateY(130%);opacity:0;transition:transform .4s var(--ease),opacity .4s;padding-bottom:env(safe-area-inset-bottom)}
+#fcb.show{transform:none;opacity:1}
+@media(min-width:768px){#fcb{display:none}}
+#fcb .in{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;border-radius:1rem;border:1px solid rgba(255,255,255,.1);background:rgba(10,10,11,.85);padding:.5rem;box-shadow:0 25px 50px -12px rgba(0,0,0,.4);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+#fcb a{display:flex;align-items:center;justify-content:center;gap:.5rem;border-radius:.75rem;padding:.75rem;font-size:.875rem;font-weight:600}
+#fcb a.c{background:var(--volt);color:var(--ink)}
+#fcb a.w{border:1px solid rgba(255,255,255,.15);color:var(--paper)}
+#fcb svg{width:1rem;height:1rem}
+.rvl{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.rvl.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rvl{opacity:1;transform:none;transition:none}.mqt{animation:none}h1 .ln>span{animation:none;transform:none}.dot::before{animation:none}.sind .rail::after{animation:none}}
+</style>
+</head>
+<body>
+<div id="prog" aria-hidden="true"></div>
+<header id="hdr">
+<nav class="container-x" aria-label="Navigație principală">
+<a href="#" id="logo" aria-label="Înapoi sus">URBAN<span class="v">GSM</span></a>
+<ul id="nl">
+<li><a href="#servicii">Servicii</a></li>
+<li><a href="#proces">Proces</a></li>
+<li><a href="#preturi">Prețuri</a></li>
+<li><a href="#recenzii">Recenzii</a></li>
+<li><a href="#intrebari">Întrebări</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+<a href="#contact" class="cta">Cere ofertă</a>
+<button type="button" id="brg" aria-label="Deschide meniul" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+</header>
+<div id="menu" aria-hidden="true">
+<ul>
+<li><a class="ml" href="#servicii">Servicii</a></li>
+<li><a class="ml" href="#proces">Proces</a></li>
+<li><a class="ml" href="#preturi">Prețuri</a></li>
+<li><a class="ml" href="#recenzii">Recenzii</a></li>
+<li><a class="ml" href="#intrebari">Întrebări</a></li>
+<li><a class="ml" href="#contact">Contact</a></li>
+</ul>
+<div class="mft"><a class="js-call js-tel" href="#"></a><p class="js-addr"></p></div>
+</div>
+<main id="continut">
+<section class="hero">
+<div class="hbg" aria-hidden="true">
+<picture>
+<source media="(max-width:767px)" srcset="https://flaviusvranau1.github.io/urban-gsm-brasov/images/hero-poster-mobile.jpg">
+<img src="https://flaviusvranau1.github.io/urban-gsm-brasov/images/hero-poster.jpg" alt="" fetchpriority="high">
+</picture>
+<video id="hv" autoplay muted loop playsinline preload="metadata" tabindex="-1"></video>
+<div class="hov"></div>
+<div class="grain"></div>
+</div>
+<div class="container-x hc">
+<p class="badge"><span class="dot" aria-hidden="true"></span><span id="hb"></span></p>
+<h1><span class="ln"><span>Telefonul tău,</span></span><span class="ln"><span>reparat ca la carte<span class="v">.</span></span></span></h1>
+<ul class="hlist">
+<li>Diagnostic gratuit</li>
+<li>Gata în aceeași zi</li>
+<li>Garanție 12 luni</li>
+</ul>
+<div class="hcta">
+<a href="#contact" class="bp">Cere o ofertă</a>
+<a href="#preturi" class="bo">Vezi prețurile</a>
+</div>
+</div>
+<a href="#servicii" class="sind" aria-label="Derulează la servicii">Derulează<span class="rail" aria-hidden="true"></span></a>
+</section>
+<section class="trust" aria-label="Cifre cheie">
+<div class="container-x tgrid" id="stats"></div>
+</section>
+<section id="servicii" class="sec light">
+<div class="container-x">
+<div class="rvl">
+<p class="eb">Servicii</p>
+<h2 class="h2">De la sticlă spartă la placa de bază.</h2>
+<p class="intro">Orice s-a întâmplat cu telefonul tău, îl primim la diagnostic gratuit și îți spunem exact ce are — apoi îl reparăm cu piese verificate.</p>
+</div>
+<div class="cards4" id="svc"></div>
+</div>
+</section>
+<section id="proces" class="sec dark">
+<div class="container-x">
+<div class="rvl">
+<p class="eb">Cum lucrăm</p>
+<h2 class="h2">Patru pași. Zero surprize.</h2>
+</div>
+<div class="steps" id="steps"></div>
+</div>
+</section>
+<section id="preturi" class="sec light">
+<div class="container-x">
+<div class="rvl">
+<p class="eb">Prețuri</p>
+<h2 class="h2">Prețuri corecte, fără poezii.</h2>
+<p class="intro">Orientativ, pentru cele mai frecvente reparații. Prețul final îl afli mereu înainte să începem — după diagnosticul gratuit.</p>
+</div>
+<div class="rvl">
+<div class="tabs" role="tablist" aria-label="Prețuri pe branduri" id="tabs"></div>
+<div class="ptw"><div class="sx">
+<table>
+<thead><tr><th scope="col">Model</th><th scope="col">Display</th><th scope="col">Baterie</th><th scope="col">Mufă încărcare</th></tr></thead>
+<tbody id="ptb"></tbody>
+</table>
+</div></div>
+<p class="pnote">Prețurile sunt orientative și pot varia în funcție de model și de tipul piesei. Diagnosticul este întotdeauna gratuit. Nu îți găsești modelul? <a class="js-call" href="#">Sună-ne la <span class="js-tel"></span></a> și primești oferta pe loc.</p>
+</div>
+</div>
+</section>
+<section id="de-ce" class="sec white">
+<div class="container-x">
+<div class="rvl">
+<p class="eb" id="why-eb">De ce Urban GSM</p>
+<h2 class="h2">Un service în care chiar poți avea încredere.</h2>
+<p class="intro" id="why-intro"></p>
+</div>
+<div class="why" id="why"></div>
+</div>
+</section>
+<section id="inainte-dupa" class="sec light">
+<div class="container-x">
+<div class="rvl">
+<p class="eb">Dovada</p>
+<h2 class="h2">Vezi diferența cu ochii tăi.</h2>
+<p class="intro">Trage de mâner ca să compari telefonul înainte și după reparație. Exact așa arată munca noastră, zi de zi.</p>
+</div>
+<div class="ba" id="ba"></div>
+</div>
+</section>
+<section id="recenzii" class="sec dark rev">
+<div class="container-x revhead">
+<div class="rvl">
+<p class="eb">Recenzii</p>
+<h2 class="h2">Ce spun clienții noștri.</h2>
+</div>
+<div class="rvl"><div class="rbadge" id="rbadge"></div></div>
+</div>
+<div class="rmob">
+<div class="trk" id="rvm"></div>
+<p class="hint container-x" aria-hidden="true">Glisează pentru mai multe →</p>
+</div>
+<div class="rdesk" id="rvd"></div>
+</section>
+<section id="intrebari" class="sec light">
+<div class="container-x faqg">
+<div class="faql rvl">
+<p class="eb">Întrebări frecvente</p>
+<h2 class="h2">Ai o întrebare? Probabil e aici.</h2>
+<p class="intro">Iar dacă nu e, un telefon durează 30 de secunde.</p>
+<a class="fbtn js-call" href="#">Sună-ne: <span class="js-tel"></span></a>
+</div>
+<div class="faq rvl" id="faq"></div>
+</div>
+</section>
+<section id="contact" class="sec light">
+<div class="container-x">
+<div class="rvl">
+<p class="eb">Contact</p>
+<h2 class="h2" id="c-title"></h2>
+<p class="intro">Fără programare, fără drumuri degeaba — ne găsești ușor, iar diagnosticul e gratuit.</p>
+</div>
+<div class="cgrid">
+<div class="ccard rvl">
+<div>
+<p class="lab">Sună-ne — răspundem rapid</p>
+<a class="cphone js-call js-tel" href="#"></a>
+<div><a class="wab js-wa" href="#" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z"/></svg>Scrie-ne pe WhatsApp</a></div>
+</div>
+<div class="cad">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+<div><b class="js-addr"></b><br><a id="maplink" href="#" target="_blank" rel="noopener noreferrer">Deschide în Google Maps</a></div>
+</div>
+<div class="chrs">
+<p class="lab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Program</p>
+<dl>
+<div class="row"><dt>Luni – Vineri</dt><dd>09:00 – 19:00</dd></div>
+<div class="row"><dt>Sâmbătă</dt><dd>10:00 – 14:00</dd></div>
+<div class="row"><dt>Duminică</dt><dd class="off">Închis</dd></div>
+</dl>
+</div>
+</div>
+<div class="cmap rvl">
+<iframe id="map" title="Hartă" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="container-x">
+<div class="fgrid">
+<div>
+<p class="flogo" id="flogo">URBAN<span class="v">GSM</span></p>
+<p class="fdesc" id="fdesc"></p>
+</div>
+<nav class="fcol" aria-label="Linkuri utile">
+<p class="fh">Navigare</p>
+<ul>
+<li><a href="#servicii">Servicii</a></li>
+<li><a href="#proces">Proces</a></li>
+<li><a href="#preturi">Prețuri</a></li>
+<li><a href="#recenzii">Recenzii</a></li>
+<li><a href="#intrebari">Întrebări</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+<div class="fcol">
+<p class="fh">Contact</p>
+<ul>
+<li class="js-addr"></li>
+<li><a class="js-call js-tel" href="#"></a></li>
+<li><a class="js-wa" href="#" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+</ul>
+</div>
+</div>
+<div class="fbot"><p id="copy"></p></div>
+</div>
+</footer>
+<div id="fcb">
+<div class="in">
+<a class="c js-call" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Sună acum</a>
+<a class="w js-wa" href="#" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z"/></svg>WhatsApp</a>
+</div>
+</div>
+<script>
+var GSMF={"afc-gsm":["AFC GSM","Pitesti","40723846474","3.9 (186)"],"fifty-gsm-folii-huse-service":["Fifty Gsm (folii/huse/service)","Pitesti","40733639971",""],"gsm-shop-pitesti":["GSM Shop Pitesti","Pitesti","40762400600","4.9"],"reparatii-telefoane-service-gsm-central":["Reparatii Telefoane Service GSM Central","Pitesti","40748784878","5.0"],"service-gsm-pitesti":["Service GSM Pitesti","Pitesti","40770631013","4.9"],"lucas-mobile":["Lucas Mobile","Bistrita","40741692190",""],"spot-gsm":["Spot Gsm","Bistrita","40763427787",""],"service-gsm":["Service GSM","Cluj-Napoca","40743574216","4.4"],"service-gsm-sibiu":["Service GSM Sibiu","Sibiu","40722688994","4.1"],"gsm-sibiu":["GSM SIBIU","Sibiu","40369450919","4.3"],"service-gsm-we-fix-it":["Service GSM - We Fix IT","Sibiu","40731662732","4.5"],"gsm-reparatii":["Gsm Reparatii","Sibiu","40760141539","4.7"],"fixgsm-service":["FixGsm Service","Sibiu","40743893893","5"],"dnd-gsm":["DnD GSM","Sibiu","40727976829","5"],"urban-gsm-brasov-reparatii-telefoane":["Urban GSM Brasov - Reparatii telefoane","Brasov","40770195816","5"],"service-gsm-orizont-3000":["Service gsm Orizont 3000","Brasov","40736076637","4.3"],"levelup-service-brasov":["LevelUp Service Brașov","Brasov","40740398294","5"],"neny-tech-service-telefoane-laptop":["Neny Tech Service Telefoane Laptop","Alba Iulia","40773893374","5"],"service-simar-alba":["Service Simar Alba","Alba Iulia","40752290057","4.8"],"t-fix-gsm-reparatii-telefoane-accesorii":["T-Fix Gsm - Reparații Telefoane & Accesorii","Timisoara","40785453484","5"],"doctor-gsm":["Doctor GSM","Timisoara","40721157530","4.9"],"service-gsm-oradea-republicii":["Service GSM Oradea Republicii","Oradea","40769220222","4.8"],"reparatii-telefoane-oradea-mgsm":["Reparatii Telefoane Oradea mGsm","Oradea","40740050977","5"],"luc-gsm-reparatii-telefoane-accesorii":["Luc GSM - Reparatii Telefoane & Accesorii","Oradea","40768858179","5"],"service-telefoane-gsm-accesorii":["Service Telefoane Gsm Accesorii","Oradea","40745882274","5"],"service-gsm-calea-bucuresti":["Service GSM Calea Bucuresti","Craiova","40771791938","4.2"],"mobile-electronics-gsm":["Mobile Electronics GSM","Craiova","40762920033","4.8"],"top-gsm-service-gsm-craiova":["TOP GSM - SERVICE GSM CRAIOVA","Craiova","40760159464","4"],"florin-gsm":["Florin Gsm","Craiova","40765278270","4.3"],"phone-service":["Phone Service","Targu Mures","40724446333","5"],"service-gsm-arad":["SERVICE GSM ARAD","Arad","40749082076","4.8"],"service-gsm-reparatii-telefoane-mobile":["SERVICE GSM Reparatii telefoane mobile","Arad","40748904145","4"],"prime-service-gsm":["Prime Service Gsm","Arad","40750231531","5"],"reparatii-telefoane-tablete-service-gsm-boul-rosu":["Reparatii telefoane tablete Service Gsm Boul Rosu","Arad","40747407682","5"],"reparatii-telefoane-dontel":["Reparatii Telefoane Dontel","Arad","40755779998","5"],"antenuta-gsm-service-telefoane-si-xerox":["Antenuta GSM - Service Telefoane si Xerox","Arad","40745961643","5"],"service-gsm-gps":["Service GSM GPS","Ploiesti","40730918116","4.8"],"service-gsm-piata-mihai-viteazul":["Service GSM Piata Mihai Viteazul","Ploiesti","40720121630","3.7"],"accesorii-si-reparatii-telefoane-fast-serv-piata-aurora-vest":["Accesorii si reparatii telefoane Fast|Serv Piata Aurora Vest","Ploiesti","40769074966","5"],"sonic-fon":["Sonic Fon","Ploiesti","40729475462","5"],"reparatii-telefoane-gbl-gsm-la-cocos":["Reparații telefoane GBL GSM - La Cocoș","Ploiesti","40721145955","4.5"],"mobitune-service-gsm":["Mobitune Service GSM","Ploiesti","40770761924","4.6"],"service-gsm-coreco":["SERVICE GSM Coreco","Ploiesti","40722732251","4.3"],"reparatii-telefoane-accesorii-gsm":["Reparatii Telefoane & Accesorii GSM","Ploiesti","40720912919","3.3"],"service-gsm-nonstop":["SERVICE GSM NONSTOP","Bucuresti","40761000555","4.8"],"service-gsm-bucuresti":["Service GSM","Bucuresti","40735675357","4.8"],"service-telefoane-aparatorii-patriei":["SERVICE TELEFOANE Aparatorii Patriei","Bucuresti","40727079977","5"],"service-gsm-zanul-telefoanelor":["SERVICE GSM/ Zanul Telefoanelor","Iasi","40741467823","4.9"],"reparatii-telefoane":["Reparatii Telefoane","Iasi","40751546548","4.1"],"dex-shop-nicolina":["DEX Shop - Nicolina","Iasi","40743844830","4.9"],"service-gsm-constanta":["Service Gsm","Constanta","40721882288","4.7"],"service-gsm-eronim":["Service gsm Eronim","Constanta","40724428221","4.7"],"tip-top-gsm-reparatii-asistenta-apple-samsung-huawei":["Tip-Top GSM - Reparatii / Asistenta Apple - Samsung - Huawei","Constanta","40752293915","5"],"tevizion-gsm":["Tevizion GSM","Galati","40754611279","5"],"smartfix-service-gsm-galati":["SmartFix Service Gsm Galati","Galati","40743522059","4.9"],"reparatii-telefoane-gsm-service-galati":["Reparații Telefoane - GSM Service Galati","Galati","40744140860","5"],"service-gsm-tech-01":["Service GSM \"TECH 01\"","Galati","40770388609","4.8"],"service-reparatii-telefoane-gsm-bacau-bluecell":["Service Reparatii Telefoane GSM BACAU BLUECELL","Bacau","40740614562","5"],"reparatii-telefoane-bacau":["Reparatii Telefoane Bacău","Bacau","40770830433","4.6"],"service-gsm-mmobile-bacau":["Service GSM MMobile Bacău","Bacau","40745403237","5"],"reparatii-pc-laptop-gsm":["Reparații pc laptop gsm","Bacau","40744995159","5"],"service-electrocasnice-garajul-lui-dexter":["Service electrocasnice Garajul lui Dexter","Bacau","40334404598","5"],"reparatii-telefoane-ceasuri-bacau":["Reparatii Telefoane & Ceasuri - Bacau","Bacau","40751416021","3.6"],"bloom-art-service-gsm":["Bloom Art - Service GSM","Bacau","40740885049","2.3"],"sos-mobile-gsm-buzau-service-gsm":["SOS Mobile Gsm Buzau ( Service Gsm)","Buzau","40765299889","4.1"],"accesorii-service-gsm":["Accesorii & Service GSM","Buzau","40732588882","4.8"],"service-gsm-buzau":["Service Gsm","Buzau","40723123749","5"],"service-gsm-buzau-viva-electronic":["Service GSM Buzau - Viva Electronic","Buzau","40744226020","4.5"],"dcmgsm":["dcmGSM","Buzau","40767991661","5"],"gs-mobile":["GS Mobile","Focsani","40371233350","4.6"],"smartrepairs-gsm":["SmartRepairs GSM","Focsani","40724230928","5"],"service-gsm-focsani":["Service GSM","Focsani","40767144777",""],"expert-gsm":["Expert GSM","Focsani","40765338937","3.9"],"alogsm":["aloGSM","Focsani","40775314510","5"],"rom-gsm-service":["Rom Gsm Service","Focsani","40761987318","2"],"atelier-gsm-fanexsim-srl":["Atelier GSM -Fanexsim Srl","Piatra Neamt","40757644359","4.9"],"qube-gsm":["qube GSM","Piatra Neamt","40757635292","5"],"service-it-gsm":["Service IT-GSM","Piatra Neamt","40742544376","5"],"gsmart-alk-srl":["GSMART ALK SRL","Piatra Neamt","40744511888","5"],"gsm-art-alk-srl":["GSM ART ALK SRL","Piatra Neamt","40744511888","5"],"service-gsm-orizont-suceava":["Service Gsm Orizont - Suceava","Suceava","40747097932","4.2"],"m-gsm":["M-GSM","Suceava","40758671737","5"],"expert-gsm-service-gsm-suceava":["Expert Gsm Service Gsm Suceava","Suceava","40721990599","4.3"],"ifix-service-gsm-botosani":["iFix Service GSM Botosani","Botosani","40755455841","5"],"gsm-mobile-phone-repair-brehuescu":["GSM mobile phone repair Brehuescu","Botosani","40740814200","4.9"],"service-gsm-reparatii-telefoane":["SERVICE GSM REPARATII TELEFOANE","Botosani","40742222213",""],"reparatii-telefoane-big":["Reparatii telefoane BIG","Botosani","40745464848","5"],"pga-gsm":["PGA GSM","Botosani","40757910251","4.4"],"reparatii-telefoane-vaslui":["REPARAȚII TELEFOANE","Vaslui","40746408888","4.7"],"service-gsm-chiriac-ciprian-ii":["Service GSM-Chiriac Ciprian ii.","Vaslui","40741057673","3.9"],"sebytel-gsm-reparatii-telefoane-vaslui":["SebyTel GSM-reparatii telefoane Vaslui","Vaslui","40774066503","5"],"asp-amanet-reparatii-telefoane-vaslui":["ASP AMANET & REPARATII TELEFOANE VASLUI","Vaslui","40793687265","4.5"],"serviciul-public-comunitar-de-pasapoarte":["Serviciul Public Comunitar de Pașapoarte","Vaslui","40235310739","3.6"],"storm-serv-store-redfon":["Storm Serv Store Redfon","Vaslui","40235312151","3"],"contakt":["Contakt","Vaslui","40371536280","1.6"],"royal-fiber-gsm":["Royal Fiber Gsm","Slatina","40768012802","4.8"],"smart-fix-electronics":["Smart Fix Electronics","Slatina","40758013031","4.7"],"flavius-gsm":["Flavius Gsm","Slatina","40767331613","4.5"],"gsm":["Gsm","Targu Jiu","40765366393","4.6"],"r-mobile-targu-jiu-service-gsm-service-laptop-reparatii-tele":["R-Mobile Targu Jiu | Service GSM | Service Laptop| Reparatii telefoane","Targu Jiu","40768000011","4.9"],"reparatii-telefoane-targu-jiu-service-gsm-accesorii-gsm":["Reparatii Telefoane Targu Jiu - Service GSM - Accesorii GSM","Targu Jiu","40758862862","5"],"service-iphone-targu-jiu":["Service iPhone Targu-Jiu","Targu Jiu","40724941745","5"],"adritud-gsm":["ADRITUD GSM","Targu Jiu","40773363554","5"],"andrei-gsm":["Andrei GSM","Targu Jiu","40763130022","5"],"service-gsm-tv-laptop-ps4-ps5-xbox-joystick-controller-pc-re":["Service GSM/TV/Laptop/PS4/PS5/Xbox/Joystick Controller/PC/Reballing","Targu Jiu","40768456628","5"],"alin-gsm":["Alin GSM","Targu Jiu","40768842028","5"],"service-gsm-drobeta-turnu-severin":["Service GSM","Drobeta-Turnu Severin","40746330943","3.7"],"gsm-dunarea":["GSM Dunarea","Drobeta-Turnu Severin","40726174764","4.9"],"service-gsm-severin-piata-mircea":["Service Gsm Severin Piața Mircea","Drobeta-Turnu Severin","40752407862","5"],"all-gsm":["ALL GSM","Drobeta-Turnu Severin","40742783455","4.4"],"iprofix-srl-service-gsm-si-accesorii":["iProfix SRL- Service GSM si accesorii","Drobeta-Turnu Severin","40750135172","5"],"service-electronice":["Service Electronice","Drobeta-Turnu Severin","40722990092","5"],"volt-store-gsm":["Volt Store Gsm","Drobeta-Turnu Severin","40774437315","4.6"],"s-c-reality-rl-an-com-s-r-l":["S.C REALITY RL&AN COM S.R.L","Drobeta-Turnu Severin","40746330943","5"],"gsm-store-reparatii-accesorii-telefoane":["GSM STORE - reparatii - accesorii - telefoane","Resita","40744583010","3.5"],"allgsm-resita":["Allgsm Reșița","Resita","40766400925","4.9"],"click-pc-gsm-resita":["CLICK PC GSM Resita","Resita","40728969475","3.9"],"eurolift-service-s-r-l":["Eurolift Service S.R.L.","Resita","40255225823","3.9"],"eurogsm":["EuroGsm","Resita","40743148304","4.2"],"gsm-boys":["GSM Boys","Deva","40724036320","4.8"],"d-tech-gsm":["D-tech GSM","Hunedoara","40735758558","5"],"service-gsm-hunedoara":["SERVICE GSM","Hunedoara","40727097669","4.4"],"computerline":["ComputerLine","Hunedoara","40723368189","4.7"],"best-gsm":["Best GSM","Hunedoara","40759392013","4.6"],"voxtel-gsm":["VOXTEL GSM","Zalau","40744706611","4.8"],"mobtech-service-gsm":["MobTech Service GSM","Zalau","40753796402","5"],"partener-pegsm":["Partener peGSM","Satu Mare","40740702019","4.8"],"gsm-factory":["Gsm Factory","Satu Mare","40751663569","4.1"],"dr-phone":["Dr Phone","Satu Mare","40745990699","4.8"],"accesorii-gsm-service-gsm":["Accesorii GSM & Service GSM","Satu Mare","40754699577","5"],"smart-phone-gsm":["Smart Phone GSM","Satu Mare","40757493927","4.6"],"29gsm":["29GSM","Satu Mare","40740053580","5"],"service-gsm-baia-mare":["Service GSM","Baia Mare","40725264326","4.9"],"iservice-gsm":["iService GSM","Baia Mare","40742079297","4.9"],"service-gsm-cosmin":["Service Gsm Cosmin","Baia Mare","40740242708","5"],"global-gsm-service-gsm":["Global gsm /Service gsm","Baia Mare","40724213933","4.8"],"cipri-gsm":["Cipri GSM","Baia Mare","40753993829","5"],"cris-service-gsm-reparatii-telefoane-mobile":["CRIS Service Gsm , reparatii telefoane mobile","Baia Mare","40742902307","5"],"bistro-gsm":["Bistro GSM","Baia Mare","40721592382","5"],"gsm-shop-bistrita":["GSM SHOP BISTRIȚA","Bistrita","40755709592","3.6"],"telefoane-bistrita":["Telefoane Bistrita","Bistrita","40785866866","5"],"luv-mobile":["LUV Mobile","Bistrita","40742121991","4.8"],"contakt-express":["Contakt Express","Bistrita","40799920888","5"],"mg-mobi-store-reparatii-telefoane-accesorii-gsm":["MG Mobi Store Reparatii Telefoane & Accesorii GSM","Targoviste","40762466727","5"],"gsm-gold":["GSM GOLD","Targoviste","40733784708","5"],"service-gsm-targoviste-sc-naicul-srl":["SERVICE GSM TARGOVISTE SC NAICUL SRL","Targoviste","40723022011","3.6"],"service-telefoane":["Service telefoane","Targoviste","40724257755","5"],"gsm-doi-brazi-la-costi":["GSM Doi Brazi - La Costi","Targoviste","40727857072","4.9"],"fiix-gsm-targoviste":["Fiix GSM Târgoviște","Targoviste","40734419784","5"],"service-accesorii-gsm":["Service & Accesorii GSM","Giurgiu","40767606772","5"],"reparatii-telefoane-ogrezeni":["Reparatii telefoane ogrezeni","Giurgiu","40721050589",""],"service-gsm-adtel-gsm":["Service Gsm -ADTel Gsm","Giurgiu","40762996644","3.8"],"servicii-it-giurgiu":["Servicii IT Giurgiu","Giurgiu","40734793884","2.8"],"contakt-giurgiu":["Contakt","Giurgiu","40371536280",""],"gsm-service-calarasi":["Gsm Service Călărași","Calarasi","40735107250","4.7"],"sc-telrom-electro-srl":["SC TELROM ELECTRO SRL","Calarasi","40729122262","4.8"],"electronic-repair-center":["Electronic repair center","Calarasi","40737826405","4.5"],"accesorii-si-service-gsm":["Accesorii si service GSM","Slobozia","40730993765","5"],"service-gsm-slobozia":["Service gsm","Slobozia","40768081818","3.9"],"laborator-gsm-reparatii-electronice-slobozia":["Laborator GSM Reparatii Electronice Slobozia","Slobozia","40730527925","4.8"],"zet-centre-slobozia":["ZET CENTRE Slobozia","Slobozia","40721919311","4.8"],"total-gsm-slobozia":["Total GSM Slobozia","Slobozia","40727221790","3.7"],"phone-shop-amanet-slobozia":["PHONE SHOP & AMANET SLOBOZIA","Slobozia","40726727676","4.8"],"gsm-telefoane":["GSM Telefoane","Slobozia","40768081818",""],"mobil-bazar":["Mobil Bazar","Sfantu Gheorghe","40740613736",""],"hobby-gsm-kovaszna":["Hobby GSM-Kovaszna","Sfantu Gheorghe","40742781856","4.7"],"mobitop-gsm":["Mobitop GSM","Miercurea Ciuc","40747387655","3.9"],"hadnagy-gsm-csikszereda":["Hadnagy GSM Csíkszereda","Miercurea Ciuc","40745849736","4.7"],"mobil-shop":["Mobil Shop","Miercurea Ciuc","40742472985",""],"gsm-reparatii-telefoane":["GSM reparații telefoane","Ramnicu Valcea","40746147301","5"],"reparatii-telefoane-teleservice-tic-tac":["Reparații telefoane Teleservice tic-tac","Ramnicu Valcea","40749674984","5"],"eurogsm-ramnicu-valcea":["EuroGsm","Ramnicu Valcea","40250734729","4.4"],"one-gsm-mobile":["One GSM Mobile","Ramnicu Valcea","40740681148","4.9"],"expert-gsm-ramnicu-valcea":["Expert GSM","Ramnicu Valcea","40728541145","4.6"],"gsm-service-osc":["GSM Service OSC","Ramnicu Valcea","40760114999","5"],"isell-store-valcea":["iSell Store Valcea","Ramnicu Valcea","40764318085","4.7"]};
+var DIA={"Pitesti":"Pitești","Ploiesti":"Ploiești","Buzau":"Buzău","Botosani":"Botoșani","Timisoara":"Timișoara","Targu Jiu":"Târgu Jiu","Constanta":"Constanța","Sfantu Gheorghe":"Sfântu Gheorghe","Targoviste":"Târgoviște","Iasi":"Iași","Bistrita":"Bistrița","Bucuresti":"București","Focsani":"Focșani","Resita":"Reșița","Bacau":"Bacău","Calarasi":"Călărași","Zalau":"Zalău","Piatra Neamt":"Piatra Neamț","Ramnicu Valcea":"Râmnicu Vâlcea","Brasov":"Brașov","Galati":"Galați","Targu Mures":"Târgu Mureș"};
+var IMG="https://flaviusvranau1.github.io/urban-gsm-brasov";
+var DEF=["Urban GSM Brașov","Brașov","40770195816","4.9"];
+var qf=new URLSearchParams(location.search).get('f');
+var F=(qf&&GSMF[qf])?GSMF[qf]:null;
+var isDef=!F;if(isDef)F=DEF;
+var NAME=F[0],CITYR=F[1],TEL=F[2]||DEF[2],RRAW=F[3]||"";
+var CITY=isDef?"Brașov":(DIA[CITYR]||CITYR);
+var rv=parseFloat(String(RRAW).replace(',','.'));if(!(rv>0&&rv<=5))rv=4.9;
+var TELN='0'+TEL.slice(2);
+var TELD=TELN.slice(0,4)+' '+TELN.slice(4,7)+' '+TELN.slice(7);
+var TELH='tel:+'+TEL;
+var WA='https://wa.me/'+TEL+'?text='+encodeURIComponent('Buna ziua! Am gasit service-ul pe internet si as dori o oferta pentru o reparatie de telefon.');
+var MAPQ=encodeURIComponent(NAME+' '+CITYR);
+var MAPE=isDef?'https://www.google.com/maps?q=Strada+Jupiter+1,+500360,+Bra%C8%99ov&output=embed':'https://www.google.com/maps?q='+MAPQ+'&output=embed';
+var MAPL=isDef?'https://www.google.com/maps/search/?api=1&query=Strada+Jupiter+1+500360+Bra%C8%99ov':'https://www.google.com/maps/search/?api=1&query='+MAPQ;
+var ADDR=isDef?'Strada Jupiter 1, 500360, Brașov':CITY+', România';
+var DESC='Service GSM în '+CITY+' — reparații telefoane cu diagnostic gratuit, piese de calitate și garanție 12 luni. Display, baterie, mufă de încărcare, placă de bază, recuperare date.';
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function fmt(v,d){return v.toLocaleString('ro-RO',{minimumFractionDigits:d,maximumFractionDigits:d});}
+/* ---------- SEO ---------- */
+document.title=isDef?'Urban GSM Brașov — Service GSM & Reparații telefoane':NAME+' — Service GSM & Reparații telefoane în '+CITY;
+document.querySelector('meta[name="description"]').setAttribute('content',(isDef?'':NAME+' — ')+DESC);
+(function(){var ld={"@context":"https://schema.org","@type":"LocalBusiness","name":NAME,"description":DESC,"telephone":"+"+TEL,"address":{"@type":"PostalAddress","addressLocality":CITY,"addressCountry":"RO"}};var s=document.createElement('script');s.type='application/ld+json';s.textContent=JSON.stringify(ld);document.head.appendChild(s);})();
+/* ---------- Personalizare ---------- */
+function logoHTML(){if(isDef)return 'URBAN<span class="v">GSM</span>';var w=NAME.toUpperCase().split(/\s+/),i=w.indexOf('GSM'),a,b;if(i>0){a=w.slice(0,i).join(' ');b=w.slice(i).join(' ');}else if(w.length>1){a=w.slice(0,-1).join(' ');b=w[w.length-1];}else{a='';b=w[0];}return esc(a)+(a?' ':'')+'<span class="v">'+esc(b)+'</span>';}
+document.getElementById('logo').innerHTML=logoHTML();
+document.getElementById('flogo').innerHTML=logoHTML();
+document.getElementById('hb').textContent='Service GSM · '+CITY;
+document.getElementById('why-eb').textContent='De ce '+(isDef?'Urban GSM':NAME);
+document.getElementById('why-intro').textContent=isDef?'Suntem pe Strada Jupiter 1 și trăim din clienți care revin și ne recomandă mai departe. De aceea lucrăm curat, la vedere.':'Suntem în '+CITY+' și trăim din clienți care revin și ne recomandă mai departe. De aceea lucrăm curat, la vedere.';
+document.getElementById('c-title').textContent=isDef?'Treci pe la noi. Suntem pe Jupiter 1.':'Treci pe la noi, în '+CITY+'.';
+document.getElementById('fdesc').textContent='Service GSM în '+CITY+'. Diagnostic gratuit, reparații în aceeași zi și 12 luni garanție scrisă.';
+document.getElementById('copy').textContent='© '+(new Date().getFullYear())+' '+NAME+'. Toate drepturile rezervate.';
+document.getElementById('maplink').href=MAPL;
+var mapEl=document.getElementById('map');mapEl.src=MAPE;mapEl.title='Hartă — '+NAME+', '+CITY;
+document.querySelectorAll('.js-tel').forEach(function(el){if(el.children.length===0)el.textContent=TELD;});
+document.querySelectorAll('.js-call').forEach(function(el){el.href=TELH;});
+document.querySelectorAll('.js-wa').forEach(function(el){el.href=WA;});
+document.querySelectorAll('.js-addr').forEach(function(el){el.textContent=ADDR;});
+/* ---------- Continut (din sablonul Urban GSM) ---------- */
+var ICO={
+arr:'<path d="M7 7h10v10"/><path d="M7 17 17 7"/>',
+chev:'<path d="m9 7-5 5 5 5"/><path d="m15 7 5 5-5 5"/>',
+plus:'<path d="M5 12h14"/><path d="M12 5v14"/>',
+pkg:'<path d="m16 16 2 2 4-4"/><path d="M21 10V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l2-1.14"/><path d="m7.5 4.27 9 5.15"/><polyline points="3.29 7 12 12 20.71 7"/><line x1="12" x2="12" y1="22" y2="12"/>',
+shield:'<path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/>',
+zap:'<path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/>',
+receipt:'<path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1z"/><path d="M14 8H8"/><path d="M16 12H8"/><path d="M13 16H8"/>',
+search:'<path d="m8 11 2 2 4-4"/><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>',
+file:'<path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m9 15 2 2 4-4"/>',
+wrench:'<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>'
+};
+function ic(n){return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+ICO[n]+'</svg>';}
+function stars(){var s='<span class="stars" role="img" aria-label="5 din 5 stele">';for(var i=0;i<5;i++)s+='<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 14.9l-5.3 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z"/></svg>';return s+'</span>';}
+var STATS=[[12,'+','ani de experiență',0],[12000,'+','telefoane reparate',0],[12,'','luni garanție scrisă',0],[rv,'★','rating Google',1]];
+var SVC=[
+['Înlocuire display / sticlă','Schimbăm displayul spart sau doar sticla, cu piese testate înainte de montaj.',250,'display.jpg','Înlocuire display spart la telefon'],
+['Înlocuire baterie','Baterii noi, cu capacitate verificată — telefonul tău ține din nou o zi întreagă.',150,'battery.jpg','Înlocuire baterie telefon'],
+['Reparație mufă de încărcare','Curățăm sau înlocuim portul de încărcare atunci când cablul nu mai face contact.',120,'charging-port.jpg','Reparație mufă de încărcare telefon'],
+['Reparații cameră foto','Înlocuim camera principală sau cea frontală și geamul de protecție al camerei.',180,'camera.jpg','Reparație cameră foto telefon'],
+['Reparații placă de bază','Microlipituri și intervenții la nivel de componentă, acolo unde alții spun „nu se mai poate”.',200,'motherboard.jpg','Microlipituri pe placa de bază a unui telefon'],
+['Tratament după contact cu lichide','Curățare ultrasonică și verificare completă după apă, cafea sau orice alt lichid.',150,'liquid.jpg','Tratament telefon după contact cu lichide'],
+['Recuperare date','Recuperăm poze, contacte și fișiere de pe telefoane care nu mai pornesc.',200,'data-recovery.jpg','Recuperare date de pe telefon defect'],
+['Decodare & servicii software','Decodare rețea, resoftare, actualizări și rezolvarea blocajelor de sistem.',80,'software.jpg','Decodare și servicii software pentru telefoane']
+];
+var STEPS=[
+['01','search','Diagnostic gratuit','Aduci telefonul, îl verificăm pe loc și îți spunem exact ce are. Fără taxe ascunse, fără obligații.'],
+['02','file','Ofertă transparentă','Primești prețul final înainte să atingem o șurubelniță. Ce ți-am spus la început e ce plătești la final.'],
+['03','wrench','Reparație rapidă','Majoritatea reparațiilor sunt gata în aceeași zi. Piesele uzuale le avem pe stoc, nu aștepți comenzi.'],
+['04','shield','Garanție 12 luni','Pleci cu certificat de garanție scris, pentru piesă și manoperă. Dacă apare ceva, revii și rezolvăm.']
+];
+var PRICE=[
+['iPhone',[['iPhone 11',280,180,150],['iPhone 12',390,220,160],['iPhone 13',450,250,180],['iPhone 14',550,280,200],['iPhone 15',700,320,220]]],
+['Samsung',[['Galaxy A54',380,180,140],['Galaxy S21 FE',420,200,150],['Galaxy S22',520,230,160],['Galaxy S23',620,250,170],['Galaxy S24',750,280,180]]],
+['Xiaomi & altele',[['Redmi Note 12',260,150,120],['Redmi Note 13 Pro',320,170,130],['Xiaomi 13',480,220,160],['Huawei P30',300,170,140],['Oppo Reno 8',340,180,140]]]
+];
+var WHY=[
+['pkg','Piese de calitate','Original, OEM sau premium aftermarket — fiecare piesă e testată înainte și după montaj.'],
+['shield','Garanție reală','12 luni în scris, pentru piesă și manoperă. Nu „pe vorbe” — primești certificat la plecare.'],
+['zap','În aceeași zi','Piesele uzuale sunt pe stoc, așa că majoritatea reparațiilor se termină în câteva ore.'],
+['receipt','Prețuri transparente','Oferta de la început e exact ce plătești la final. Zero costuri ascunse, zero surprize.']
+];
+var BA=[
+['Înlocuire display','Reparat în ~2 ore','display-before.jpg','display-after.jpg','Telefon cu displayul spart, apoi cu display nou montat'],
+['Geam cameră foto','Reparat în aceeași zi','camera-before.jpg','camera-after.jpg','Telefon cu geamul camerei spart, apoi reparat complet']
+];
+var REVS=[
+['Andrei M.','iPhone 13','Mi-au schimbat displayul în mai puțin de două ore. Preț corect, spus de la început, și telefonul arată ca nou.'],
+['Ioana P.','Galaxy S22','Bateria nu mai ținea nici o jumătate de zi. Am plecat cu telefonul rezolvat în aceeași după-amiază, exact la prețul din ofertă.'],
+['Radu C.','iPhone 12','Telefon scăpat în lac, nu mai pornea deloc. Nu doar că l-au readus la viață, dar mi-au recuperat și toate pozele.'],
+['Elena D.','Redmi Note 13','Mufa de încărcare făcea contact doar într-o poziție. Curățată și reparată în vreo 40 de minute, cât am băut o cafea în zonă.'],
+['Mihai T.','Galaxy S21','Alte service-uri mi-au zis că placa de bază e de aruncat. Aici au făcut microlipituri și telefonul merge impecabil de luni bune.'],
+['Cristina V.','iPhone 14','Comunicare excelentă: mi-au explicat exact ce schimbă și de ce. Garanția pe 12 luni am primit-o în scris, nu doar „pe vorbe”.'],
+['Vlad S.','Oppo Reno 8','Decodare făcută rapid și fără bătăi de cap. Recomand cu încredere, sunt oameni serioși.'],
+['Diana N.','iPhone 12','Camera foto nu mai focaliza după o căzătură. Schimbată pe loc, pozele ies din nou perfect. Mulțumesc!']
+];
+var FAQS=[
+['Cât durează o reparație?','Majoritatea reparațiilor — display, baterie, mufă de încărcare — sunt gata în aceeași zi, de multe ori în 1–2 ore. Pentru intervențiile la placa de bază sau recuperarea de date îți spunem un termen exact după diagnostic.'],
+['Pierd datele din telefon?','La reparațiile obișnuite (display, baterie, mufă) datele rămân neatinse. Îți recomandăm totuși un backup înainte de orice intervenție — te putem ajuta noi cu el, gratuit, înainte să începem.'],
+['Ce garanție primesc?','12 luni garanție scrisă, atât pentru piesa montată, cât și pentru manoperă. Dacă apare orice problemă legată de reparație, revii la noi și o rezolvăm fără costuri suplimentare.'],
+['Diagnosticul costă ceva?','Nu. Diagnosticul este întotdeauna gratuit și fără obligații — îți spunem exact ce are telefonul și cât ar costa reparația, iar decizia îți aparține.'],
+['Folosiți piese originale?','Lucrăm cu piese originale, OEM sau premium aftermarket, în funcție de model și de buget. Îți prezentăm opțiunile la ofertă, cu prețul și diferențele dintre ele, și alegi tu varianta potrivită.'],
+['Am nevoie de programare?',isDef?'Nu e obligatorie — poți veni direct în service, pe Strada Jupiter 1. Pentru modelele mai rare îți recomandăm să ne suni înainte, ca să rezervăm piesa și să nu aștepți.':'Nu e obligatorie — poți veni direct în service, în '+CITY+'. Pentru modelele mai rare îți recomandăm să ne suni înainte, ca să rezervăm piesa și să nu aștepți.'],
+['Reparați și tablete sau smartwatch-uri?','Da. Pe lângă telefoane, reparăm tablete și smartwatch-uri — aceleași condiții: diagnostic gratuit și garanție pentru intervenție.'],
+['Cum pot plăti?','Cash sau cu cardul, direct în service. Primești bon fiscal și certificatul de garanție pentru fiecare reparație.']
+];
+/* ---------- Randare sectiuni ---------- */
+document.getElementById('stats').innerHTML=STATS.map(function(s,i){return '<div class="stat rvl" style="transition-delay:'+(i*.08)+'s"><b><span class="cnt" data-v="'+s[0]+'" data-d="'+s[3]+'">'+fmt(0,s[3])+'</span><span class="v">'+s[1]+'</span></b><small>'+s[2]+'</small></div>';}).join('');
+document.getElementById('svc').innerHTML=SVC.map(function(s,i){return '<article class="scard rvl" style="transition-delay:'+((i%4)*.07)+'s"><div class="simg"><img src="'+IMG+'/images/services/'+s[3]+'" alt="'+esc(s[4])+'" loading="lazy"></div><div class="sbody"><h3>'+s[0]+'</h3><p>'+s[1]+'</p><div class="sfoot"><b>de la '+s[2]+' lei</b>'+ic('arr')+'</div></div></article>';}).join('');
+document.getElementById('steps').innerHTML=STEPS.map(function(s,i){return '<div class="step rvl" style="transition-delay:'+(i*.08)+'s"><span class="idx">'+s[0]+'</span><span class="ibox">'+ic(s[1])+'</span><h3>'+s[2]+'</h3><p>'+s[3]+'</p></div>';}).join('');
+document.getElementById('why').innerHTML=WHY.map(function(w,i){return '<div class="wit rvl" style="transition-delay:'+(i*.08)+'s"><span class="wic">'+ic(w[0])+'</span><h3>'+w[1]+'</h3><p>'+w[2]+'</p></div>';}).join('');
+document.getElementById('ba').innerHTML=BA.map(function(b,i){return '<div class="rvl" style="transition-delay:'+(i*.1)+'s"><div class="cmp"><img src="'+IMG+'/images/before-after/'+b[3]+'" alt="'+esc(b[4])+'" loading="lazy"><div class="top" aria-hidden="true"><img src="'+IMG+'/images/before-after/'+b[2]+'" alt="" loading="lazy"></div><div class="div" aria-hidden="true"><i></i><span class="hnd">'+ic('chev')+'</span></div><span class="lb b" aria-hidden="true">Înainte</span><span class="lb a" aria-hidden="true">După</span><input type="range" min="0" max="100" value="50" aria-label="Comparație înainte / după: '+esc(b[4])+'"></div><div class="bacap"><h3>'+b[0]+'</h3><span>'+b[1]+'</span></div></div>';}).join('');
+document.getElementById('rbadge').innerHTML=stars()+'<span><strong>'+fmt(rv,1)+' din 5</strong> pe Google</span>';
+function rcard(r){return '<figure class="rcard">'+stars()+'<blockquote>„'+r[2]+'”</blockquote><figcaption><b>'+esc(r[0])+'</b><span>'+esc(r[1])+'</span></figcaption></figure>';}
+document.getElementById('rvm').innerHTML=REVS.map(rcard).join('');
+(function(){var r1=REVS.slice(0,4).map(rcard).join(''),r2=REVS.slice(4).map(rcard).join('');document.getElementById('rvd').innerHTML='<div class="mq"><div class="mqt"><div>'+r1+'</div><div aria-hidden="true">'+r1+'</div></div></div><div class="mq mqr"><div class="mqt"><div>'+r2+'</div><div aria-hidden="true">'+r2+'</div></div></div>';})();
+document.getElementById('faq').innerHTML=FAQS.map(function(f,i){return '<div class="fit'+(i===0?' open':'')+'"><h3><button type="button" class="fq" aria-expanded="'+(i===0)+'" aria-controls="fa'+i+'"><span class="t">'+f[0]+'</span><span class="pl" aria-hidden="true">'+ic('plus')+'</span></button></h3><div class="fa" id="fa'+i+'" role="region"><p>'+f[1]+'</p></div></div>';}).join('');
+document.getElementById('tabs').innerHTML=PRICE.map(function(t,i){return '<button type="button" role="tab" id="tab'+i+'" aria-selected="'+(i===0)+'"'+(i===0?' class="on"':'')+'>'+t[0]+'</button>';}).join('');
+function setTab(i){document.getElementById('ptb').innerHTML=PRICE[i][1].map(function(r){return '<tr><th scope="row">'+r[0]+'</th><td>'+r[1]+' lei</td><td>'+r[2]+' lei</td><td>'+r[3]+' lei</td></tr>';}).join('');document.querySelectorAll('#tabs button').forEach(function(b,j){b.classList.toggle('on',j===i);b.setAttribute('aria-selected',j===i);});}
+setTab(0);
+document.querySelectorAll('#tabs button').forEach(function(b,i){b.addEventListener('click',function(){setTab(i);});});
+/* ---------- Interactiuni ---------- */
+var hdr=document.getElementById('hdr'),fcb=document.getElementById('fcb'),prog=document.getElementById('prog');
+function onScr(){var y=window.scrollY||0;hdr.classList.toggle('sc',y>32);fcb.classList.toggle('show',y>560);var h=document.documentElement,m=h.scrollHeight-window.innerHeight;prog.style.transform='scaleX('+(m>0?y/m:0)+')';}
+window.addEventListener('scroll',onScr,{passive:true});onScr();
+var brg=document.getElementById('brg');
+function closeMenu(){document.body.classList.remove('mo');document.documentElement.style.overflow='';brg.setAttribute('aria-expanded','false');document.getElementById('menu').setAttribute('aria-hidden','true');}
+brg.addEventListener('click',function(){var on=!document.body.classList.contains('mo');document.body.classList.toggle('mo',on);document.documentElement.style.overflow=on?'hidden':'';brg.setAttribute('aria-expanded',on);document.getElementById('menu').setAttribute('aria-hidden',!on);});
+document.querySelectorAll('#menu a.ml').forEach(function(a){a.addEventListener('click',closeMenu);});
+document.getElementById('logo').addEventListener('click',function(e){e.preventDefault();closeMenu();window.scrollTo({top:0,behavior:'smooth'});});
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{rootMargin:'-60px 0px'});
+document.querySelectorAll('.rvl').forEach(function(el){io.observe(el);});
+var cio=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;cio.unobserve(e.target);var el=e.target,val=parseFloat(el.dataset.v),d=parseInt(el.dataset.d,10),t0=null;function fr(t){if(!t0)t0=t;var p=Math.min(1,(t-t0)/1800),k=1-Math.pow(1-p,4);el.textContent=fmt(val*k,d);if(p<1)requestAnimationFrame(fr);}requestAnimationFrame(fr);});},{rootMargin:'-60px 0px'});
+document.querySelectorAll('.cnt').forEach(function(el){cio.observe(el);});
+var spy=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){document.querySelectorAll('#nl a').forEach(function(a){a.classList.toggle('act',a.getAttribute('href')==='#'+e.target.id);});}});},{rootMargin:'-40% 0px -55% 0px'});
+['servicii','proces','preturi','recenzii','intrebari','contact'].forEach(function(id){var el=document.getElementById(id);if(el)spy.observe(el);});
+document.querySelectorAll('.cmp input').forEach(function(inp){inp.addEventListener('input',function(){inp.parentNode.style.setProperty('--pos',inp.value+'%');});});
+document.querySelectorAll('.fit').forEach(function(it){var btn=it.querySelector('.fq'),pan=it.querySelector('.fa');if(it.classList.contains('open'))pan.style.maxHeight=pan.scrollHeight+'px';btn.addEventListener('click',function(){var open=it.classList.contains('open');document.querySelectorAll('.fit.open').forEach(function(o){o.classList.remove('open');o.querySelector('.fa').style.maxHeight='0px';o.querySelector('.fq').setAttribute('aria-expanded','false');});if(!open){it.classList.add('open');pan.style.maxHeight=pan.scrollHeight+'px';btn.setAttribute('aria-expanded','true');}});});
+(function(){var v=document.getElementById('hv');if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){v.remove();return;}var mob=window.matchMedia('(max-width:767px)').matches;v.src=IMG+(mob?'/videos/hero-mobile.mp4':'/videos/hero.mp4');v.addEventListener('canplay',function(){v.classList.add('on');});var p=v.play&&v.play();if(p&&p.catch)p.catch(function(){});})();
+</script>
+</body>
+</html>
